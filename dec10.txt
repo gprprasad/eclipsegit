@@ -1,0 +1,98 @@
+restoring database from backup
+------------------------------
+Restore database databasename from disk='' with recovery
+go
+
+EX:RESTORE DATABASE test2 FROM DISK = 'C:\movies\test1.bak' WITH RECOVERY
+GO
+
+HOW TO CREATE THE WINDOWS INSTANCE IN AWS :
+===========================================
+1.take windows AMI on AWS which free tier.
+2.lauch the instance with new keypair
+3.after that we want to login in to that instance then,
+4.selest the instance->click on CONNECT->it will dispaly the download remote desktop file click on it
+after that->click get password->choose private key->decrypt the password copy to clipboard.
+5.then select the remote desktop file it will ask the passwd copy the passwd click connect->click yes
+->login to instance.
+
+GIT STASH :
+===========
+It means,it will do the 2 things i.e., it will take a backup and it will try to undo the particular 
+files that you was modified.this will happen before the commit.
+->To create stash
+$git stash
+->to list all stash
+$git stash list
+->reapply the changes,remove the stash
+$git stash pop
+->apply a specific stash from repository
+$git stash apply stash@{num}
+->remove the stash from repo
+$git stash clear
+
+git squash:
+===========
+It is use to combaining all commits into one commit when merge is required.If you already pushed 
+commits to github,and then squash them locally,you will have to force to push to your branch.
+$git push origin branch-name --force.
+cmd--> git rebase -i HEAD~n (n=howmany commits you want to squash)
+====
+STEPS:
+1.create new branch called squash
+2.create files add and commit those files.
+3.after commited squash the above two commits then cmd is "git rebase -i HEAD~n(n=2)".if you want to
+squash four commits then n=4.
+4.after executing the above cmd one window will be open which is having commit messages.
+5.In that message we able to see PICK word it can replace with SQUASH word then save the file.
+6.Then you push to remote in remote repo you see combained commit.
+[NOTE:if you want to do squash operation atleast you want two commits]
+7.If you want to remove squash go to squash branch then use this command "$git rebase --abort".
+NOTE:you can always edit the last commit before you pushing into repository
+cmd-->   $git commit --amend
+
+GIT REVERT [before commit] :
+============================
+It is used for if you accidentally done some changes in your local repository then you wants undo the
+changes then you want revert operations.
+It is 3 types: 1.soft 2.mixed 3.hard
+1.soft:If you use this cmd it can undo the chenges from local repo after that the HEAD pointer movies
+to prvious commit ID.    CMD:$git revert --soft HEAD~1
+2.MIXED: By using this we can undo from local repo and staging area.
+CMD: $ git revert --mixed HEAD~1
+3.by using this we can undo from all three areas i.e., localrepo,staging and working tree.
+CMD: $ git revert -- hard HEAD~1
+
+GIT RESET [after commit] :
+==========================
+You can undo the commits in two ways..firstly you can use git revert,if you want to keep your commit
+history and the second is you can use git reset,which you delete all your commit history and bring 
+HEAD to commit where you want.
+->revert a commit ID
+ $ git revert <commit ID>
+->If you want to change HEAD one commit id to another,then 
+ $git checkout <commit ID>
+
+EXAMPLE :If one branch have 7 commits but i want to change HEAD 3rd commit then,
+	$ git checkout <3rd commit id>
+after this we see logs it display from 3rd commit id,but i want to see 7 commits then we give branch
+name	$ git checkout <branch name>   after this we can see all 7 commits.
+
+GIT PULL :
+==========
+Git pull means it will download the data from remote repository and it apply to the local repository.
+PULL=FETCH+MERGE
+
+GIT MERGING :
+================
+Git merging menas it is used to merge two branches to committing the data easily.
+-> $ git merge sourcebranch destinationbranch
+Fast Forward Merge:
+
+
+
+
+tomcat changing port---server.xml
+1.<server port>
+2.<http port  redirectPort>
+3.<ajp port redirectPort>

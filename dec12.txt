@@ -1,0 +1,16 @@
+HOW TO TAKE BACKUP AND RESTORE DATABASE :
+=========================================
+->First launch SQL managemenat studio and connect to that.
+->Expand database option then select the database what you want to take backup
+->Right click on DB>go to tasks>click on backup
+->select database name>selest backup type>select the destination where you want to store the backup
+(give backupfile name with ".bak")extension>click ok
+->Then backup take successfully.
+RESTORE :
+=========
+->right click on DB>select restore DB
+->In source select device>browse the backup file>add>select the backup file>click OK
+->In destination give DB name(optional).If you give different DB name then select FILES>under restore
+as we need to change the file name>ok>restore successfull.
+->Go to managemenat studio refresh the database then we can see the restored DBs
+ 

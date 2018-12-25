@@ -1,0 +1,35 @@
+->In .git folder we have hooks,info,objects,refs,config,description,HEAD default folders and files.
+BRANCH->A branch in git is a simply pointer to a commit.
+
+BRANCHING STRATEGY->
+====================
+1.github flow is a best branching strategy.
+2.github flow simply states that when working on any feature or bug fix,you should create a branch.
+
+HOW TO PUSH REMOTE REPOSITORY:
+=============================
+1.you create the branch.
+2.you clone or checkout the latest code from repo.
+3.edit whatever you want to edit.
+4.you should add and commit to local repo.
+5.you have to push branch first to remote repo after that you push modifying files to remote repo.
+6.then you able to see the changes in remote repo.
+-->git branch -a :shows all local and remote branches
+-->git branch -r :shows only remote branches
+-->git brnach -l :shows only local branches
+
+If you done a commit how it take internally...
+============================================
+If you commit a mesage then internally it create a blob(binay large object) for every file on top of 
+this its create tree object i.e., it have blob oject information and some data on top of this we have
+commit message and user information.These total process called as "single commit repository data".
+
+GIT CHERRY-PICK :
+===============
+Git cherry-pick means it is a  one type of merge but don't merge all data from source to destination,
+pick whatever you want by using commit ID.
+
+Diff between merge and cherry-pick:
+==================================
+MERGE:If you use git merge command it will merge all the data which is not in destination branch.
+CHERRY-PICK:If you use cherry-pick we can merge particular data by using its commit id.
